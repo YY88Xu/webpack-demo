@@ -1,0 +1,6 @@
+.hello{
+    color: red;
+    /*background: url('./icon.jpeg');*/
+    -webkit-background-size: contain;
+    background-size: contain;
+}
