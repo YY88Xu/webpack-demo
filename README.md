@@ -30,10 +30,15 @@ style-loader 本质在module.hot.accept()中进行patch<style>标签。
 在package.json中增加 sideEffects 属性来实现。math.js中的square没有被index.js调用，所以没有必要打包的时候打包出去，
 所以可以将它通过 sideEffects:false 去掉。
 
+## 生产环境构建
+npm install --save-dev webpack-merge
+分别构建webpack.dev.js和webpack.pro.js,其中 --optimize-minimize标记将在后台引用UglifyJSPlugin.
 
-
-
-
+## 代码分离
+有三种常用的代码分离方法：
+（1）入口起点：使用entry配置手动地分离代码。
+（2）防止重复：使用CommonsChunkPlugin去重和分离chunk。
+（3）动态导入：通过模块的内联函数调用来分离代码。
 
 
 
